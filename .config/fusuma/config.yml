@@ -1,0 +1,23 @@
+swipe:
+  4:
+    left:
+      command: "xdotool key super+1" # History forward
+    right:
+      command: "xdotool key super+0" # History forward
+  3:
+    left:
+      command: "xdotool key super+shift+comma" # History forward
+    right:
+      command: "xdotool key super+shift+period" # History forward
+    down:
+      command: "xdotool key super+d" # Activity
+    up:
+      command: "xdotool key super+return" # Activity
+pinch:
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+hold:
+  4:
+    command: "xdotool key super" # Activity

@@ -136,6 +136,8 @@ export CLANG_BASE="--build-base build_clang --install-base install_clang"
 export BUILD_ARGS="--symlink-install ${CLANG_BASE} --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
 
 export MODULAR_HOME="/home/mtu/.modular"
 export PATH="/home/mtu/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
