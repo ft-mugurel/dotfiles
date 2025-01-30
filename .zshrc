@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fino-time"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -85,11 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -102,49 +102,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias copy="xsel --input --clipboard"
-alias paste="xsel --output --clipboard"
-alias vim="nvim"
-alias e="nvim"
-alias racing="tmuxifier load-session racing"
-alias cat="bat"
-alias tmuxa="tmux attach-session -t"
-
-if [ -f "/opt/ros/noetic/setup.zsh" ]; then
-	source "/opt/ros/noetic/setup.zsh"
-	source "/home/mtu/driverless-23-24/devel/setup.zsh"
-else
-	alias ls="eza --icons --classify --color=always"
-	alias ros="distrobox enter --root ros"
-	alias ghce="gh copilot explain"
-	alias ghcs="gh copilot suggest"
-fi
-
-# Environment Variables
-bindkey -v
-export PATH=$PATH:~/Tools/nvim/bin
-export PATH=$PATH:~/Tools/Discord
-export EDITOR="/usr/bin/nvim"
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export PATH=$PATH:~/arduino/
-export PATH=$PATH:/opt/st/stm32cubeide_1.15.1
-export PATH=$PATH:/opt/gcc-arm/bin/
-if [ -f "/home/mtu/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/mtu/.config/fabric/fabric-bootstrap.inc"; fi
-export CC=clang
-export CXX=clang++
-export CLANG_BASE="--build-base build_clang --install-base install_clang"
-export BUILD_ARGS="--symlink-install ${CLANG_BASE} --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH="$HOME/go"
-PATH="$GOPATH/bin:$PATH"
-
-export MODULAR_HOME="/home/mtu/.modular"
-export PATH="/home/mtu/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
-export GTK_THEME=Adwaita-dark
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH=$HOME/.local/bin:$PATH
